@@ -3,10 +3,14 @@ import {View} from "react-native";
 
 interface ZStackProps {
     children: JSX.Element[] | JSX.Element
+    revers?: boolean
 }
 
-const getAbsoluteChildren = (children: JSX.Element[] | JSX.Element) => {
+const getAbsoluteChildren = (children: JSX.Element[] | JSX.Element, reverse?: boolean) => {
     let childrenForRender = React.Children.toArray(children)
+    if (reverse) {
+        childrenForRender = childrenForRender.reverse()
+    }
     return childrenForRender.map((child: any) => {
         return React.cloneElement(child, {position: 'absolute'},
             child.props.children)
@@ -14,10 +18,10 @@ const getAbsoluteChildren = (children: JSX.Element[] | JSX.Element) => {
 }
 
 
-export const ZStack = ({children}: ZStackProps) => {
+export const ZStack = ({children, revers}: ZStackProps) => {
     return (
-        <View style={{position: 'relative'}}>
-            {getAbsoluteChildren(children)}
+        <View style={{position: 'absolute'}}>
+            {getAbsoluteChildren(children, revers)}
         </View>
     )
 };
