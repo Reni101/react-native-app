@@ -1,35 +1,26 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {Box} from "./src/components/Box/Box";
-import {VStack} from "./src/components/VStack/VStack";
-import {HStack} from "./src/components/HStack/HStack";
-import {ZStack} from "./src/components/ZStack/ZStack";
-import {PADDING} from "./src/constant/constant";
+import {FlatList, Image, ListRenderItem, StyleSheet, Text, View} from 'react-native';
+import {fakeData, ItemI} from "./src/data/FakeData";
 
 
 export default function App() {
+    const renderItem: ListRenderItem<ItemI> = ({item}) => {
+        return <View>
+            <Image style={[styles.image]} source={item.image}/>
+            <Text>{item.title}</Text>
+            <Text>{item.price}</Text>
+
+        </View>
+    }
+
     return (
         <View style={styles.container}>
-            <VStack>
-                <Box bgr={'#7767f8'} width={100}>
-                    <Text>text</Text>
-                </Box>
-            </VStack>
-            <Box bgr={'#7767f8'} width={100}>
-                <Box bgr={'red'} width={20}/>
-                <Box bgr={'red'} width={20}/>
-                <Box bgr={'red'} width={20}/>
-            </Box>
-            <HStack>
-                <Box bgr={'red'} width={100}/>
-                <Box bgr={'red'} width={100}/>
-                <Box bgr={'red'} width={100}/>
-                <Box bgr={'red'} width={100}/>
-            </HStack>
-            <ZStack>
-                <Box bgr={'blue'} width={100} mt={10} ml={10}/>
-                <Box bgr={'green'} width={100} mt={20} ml={20}/>
-                <Box bgr={'yellow'} width={100} mt={30} ml={30}/>
-            </ZStack>
+            <FlatList
+                data={fakeData}
+                renderItem={renderItem}
+                numColumns={2}
+            />
+            <Image style={styles.image} source={require('./assets/favicon.png')}/>
+            <Image style={styles.image} source={require('./assets/phonePhoto/image 1.png')}/>
         </View>
     );
 }
@@ -37,9 +28,12 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "flex-start",
+        padding: 50,
+        alignItems: 'center'
     },
-
+    image: {
+        width: 50,
+        height: 50,
+    }
 });
 
