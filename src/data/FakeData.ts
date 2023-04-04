@@ -8,12 +8,12 @@ export interface ItemI {
 }
 
 const images = [
-    require('../../assets/phonePhoto/image 1.png'),
-    require('../../assets/phonePhoto/image 2.png'),
-    require('../../assets/phonePhoto/image 3.png'),
-    require('../../assets/phonePhoto/image 4.png'),
-    require('../../assets/phonePhoto/image 5.png'),
-    require('../../assets/phonePhoto/image 6.png'),
+    require('./../../assets/phonePhoto/image1.png'),
+    require('../../assets/phonePhoto/image2.png'),
+    require('../../assets/phonePhoto/image3.png'),
+    require('../../assets/phonePhoto/image4.png'),
+    require('../../assets/phonePhoto/image5.png'),
+    require('../../assets/phonePhoto/image6.png'),
 
 ]
 

@@ -20,7 +20,8 @@ export default function App() {
                 numColumns={2}
             />
             <Image style={styles.image} source={require('./assets/favicon.png')}/>
-            <Image style={styles.image} source={require('./assets/phonePhoto/image 1.png')}/>
+            <Image style={styles.image} source={require('./assets/phonePhoto/image1.png')}/>
+            {/*<Image style={styles.image} source={{uri:}}/>*/}
         </View>
     );
 }
