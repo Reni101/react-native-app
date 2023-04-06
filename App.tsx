@@ -1,6 +1,9 @@
-import {FlatList, Image, ListRenderItem, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, ListRenderItem, Pressable, Text, View} from 'react-native';
 import {fakeData, ItemI} from "./src/data/FakeData";
-import {PADDING, WIDTH} from "./src/constant/constant";
+import {PADDING} from "./src/constant/constant";
+import {SVGBin} from "./src/svgIcons/SVGBin";
+import {styles} from "./AppStyles";
+import {Header} from "./src/components/Header/Header";
 
 
 export default function App() {
@@ -10,8 +13,14 @@ export default function App() {
                    resizeMode={'contain'}
                    source={item.image}/>
             <View style={[styles.infoIphone]}>
-                <Text>{item.title}</Text>
-                <Text>{item.price}</Text>
+                <Text style={[styles.phoneName]}>{item.title}</Text>
+                <View style={[styles.priceContainer]}>
+                    <Text style={[styles.phonePrice]}> $ {item.price}</Text>
+                    <Pressable>
+                        <SVGBin/>
+                    </Pressable>
+
+                </View>
             </View>
         </View>
     }
@@ -24,34 +33,13 @@ export default function App() {
                 numColumns={2}
                 contentContainerStyle={{paddingHorizontal: PADDING}}
                 columnWrapperStyle={{justifyContent: 'space-between'}}
+                ListHeaderComponent={Header}
+                ListHeaderComponentStyle={styles.header}
+                stickyHeaderIndices={[0]}
             />
-
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'grey',
-        flex: 1,
-    },
-    imageStyle: {
-        width: (WIDTH - PADDING * 2) / 2 - 8,
-        height: (WIDTH - PADDING * 2) / 2 - 8,
-    },
-    itemProps: {
-        backgroundColor: 'white',
-        width: (WIDTH - PADDING * 2) / 2 - 8,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.4)',
-        borderRadius: 5,
-        paddingTop: 10
-    },
-    infoIphone: {
-        marginTop: 19,
-        marginBottom: 22,
-        marginLeft: 12,
-        marginRight: 15
-    }
-});
+
 
