@@ -4,6 +4,8 @@ import {PADDING} from "./src/constant/constant";
 import {SVGBin} from "./src/svgIcons/SVGBin";
 import {styles} from "./AppStyles";
 import {Header} from "./src/components/Header/Header";
+import {Footer} from "./src/components/Footer/Footer";
+import {Empty} from "./src/components/Empty/Empty";
 
 
 export default function App() {
@@ -31,11 +33,14 @@ export default function App() {
                 data={fakeData}
                 renderItem={renderItem}
                 numColumns={2}
-                contentContainerStyle={{paddingHorizontal: PADDING}}
+                contentContainerStyle={{paddingHorizontal: PADDING, flexGrow: 1}}
                 columnWrapperStyle={{justifyContent: 'space-between'}}
                 ListHeaderComponent={Header}
                 ListHeaderComponentStyle={styles.header}
                 stickyHeaderIndices={[0]}
+                ListFooterComponent={Footer}
+                ListFooterComponentStyle={styles.footer}
+                ListEmptyComponent={Empty}
             />
         </View>
     );

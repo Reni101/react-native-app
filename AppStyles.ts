@@ -13,7 +13,10 @@ export const styles = StyleSheet.create({
         backgroundColor: '#21201E',
         marginBottom: 19
     },
-
+    footer: {
+        marginHorizontal: -PADDING,
+        backgroundColor: '#21201E',
+    },
     imageStyle: {
         width: (WIDTH - PADDING * 2) / 2 - 8,
         height: (WIDTH - PADDING * 2) / 2 - 8,
