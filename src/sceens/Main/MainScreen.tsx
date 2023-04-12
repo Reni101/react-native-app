@@ -29,7 +29,7 @@ export const MainScreen = () => {
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyle={'light-content'}/>
+            <StatusBar barStyle={'dark-content'}/>
             <FlatList
                 data={fakeData}
                 renderItem={renderItem}
