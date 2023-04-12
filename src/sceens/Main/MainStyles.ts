@@ -1,5 +1,5 @@
 import {Platform, StyleSheet} from "react-native";
-import {PADDING, WIDTH} from "./src/constant/constant";
+import {PADDING, WIDTH} from "../../constant/constant";
 
 export const styles = StyleSheet.create({
     container: {
