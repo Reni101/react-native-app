@@ -1,20 +1,22 @@
 import {MainScreen} from "./src/sceens/Main/MainScreen";
 import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {ShoppingCartScreen} from "./src/sceens/ShoppingCarstScreen/ShoppingCartScreen";
 import {MainStackType} from "./src/sceens/types";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
-const Stack = createNativeStackNavigator<MainStackType>()
+const Tab = createBottomTabNavigator<MainStackType>()
 
 export default function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Tab.Navigator>
 
-                <Stack.Screen name="Main" component={MainScreen} />
-                <Stack.Screen name="Shop" component={ShoppingCartScreen} />
+                <Tab.Screen name="Main" component={MainScreen} options={{headerShown:false}}/>
+                <Tab.Screen name="Shop" options={{headerShown:false}} >
+                    {(props) => <ShoppingCartScreen {...props}  value={12}/>}
+                </Tab.Screen>
 
-            </Stack.Navigator>
+            </Tab.Navigator>
         </NavigationContainer>
     );
 }
