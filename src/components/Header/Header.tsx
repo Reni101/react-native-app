@@ -2,7 +2,7 @@ import React from 'react';
 import {Pressable, View} from "react-native";
 import {styles} from "./HeaderStyles";
 import {SVGMenu} from "../../svgIcons/SVGMenu";
-import {SVGBin} from "../../svgIcons/SVGBin";
+import {SVGShoppingCart} from "../../svgIcons/SVGShoppingCart";
 
 export const Header = () => {
     return (
@@ -11,7 +11,7 @@ export const Header = () => {
                 <SVGMenu/>
             </Pressable>
             <Pressable>
-                <SVGBin colorFill='#fff'/>
+                <SVGShoppingCart colorFill='#fff'/>
             </Pressable>
         </View>
     );

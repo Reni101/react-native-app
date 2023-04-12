@@ -1,7 +1,7 @@
-import {FlatList, Image, ListRenderItem, Pressable, Text, View} from 'react-native';
+import {FlatList, Image, ListRenderItem, Pressable, StatusBar, Text, View} from 'react-native';
 import {fakeData, ItemI} from "./src/data/FakeData";
 import {PADDING} from "./src/constant/constant";
-import {SVGBin} from "./src/svgIcons/SVGBin";
+import {SVGShoppingCart} from "./src/svgIcons/SVGShoppingCart";
 import {styles} from "./AppStyles";
 import {Header} from "./src/components/Header/Header";
 import {Footer} from "./src/components/Footer/Footer";
@@ -19,7 +19,7 @@ export default function App() {
                 <View style={[styles.priceContainer]}>
                     <Text style={[styles.phonePrice]}> $ {item.price}</Text>
                     <Pressable>
-                        <SVGBin/>
+                        <SVGShoppingCart/>
                     </Pressable>
 
                 </View>
@@ -29,10 +29,12 @@ export default function App() {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle={'light-content'}/>
             <FlatList
                 data={fakeData}
                 renderItem={renderItem}
                 numColumns={2}
+                bounces={false}
                 contentContainerStyle={{paddingHorizontal: PADDING, flexGrow: 1}}
                 columnWrapperStyle={{justifyContent: 'space-between'}}
                 ListHeaderComponent={Header}

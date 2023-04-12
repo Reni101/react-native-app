@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, {Path, SvgProps,} from "react-native-svg";
 
-export const SVGBin = (props: SvgProps & { colorFill?: string }) => (
+export const SVGShoppingCart = (props: SvgProps & { colorFill?: string }) => (
     <Svg
         width={20}
         height={20}
