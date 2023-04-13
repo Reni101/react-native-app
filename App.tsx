@@ -1,20 +1,41 @@
-import {MainScreen} from "./src/sceens/Main/MainScreen";
 import {NavigationContainer} from "@react-navigation/native";
-import {ShoppingCartScreen} from "./src/sceens/ShoppingCarstScreen/ShoppingCartScreen";
 import {MainStackType} from "./src/sceens/types";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {View} from "react-native";
+import {SVGShoppingCart} from "./src/svgIcons/SVGShoppingCart";
+import {SvgHome} from "./src/svgIcons/SVGHome";
+import {ShopScreen} from "./src/sceens/ShopScreen/ShopScreen";
+import {CartScreen} from "./src/sceens/CartScreen/CartScreen";
 
 const Tab = createBottomTabNavigator<MainStackType>()
 
 export default function App() {
     return (
         <NavigationContainer>
-            <Tab.Navigator>
+            <Tab.Navigator initialRouteName={'Shop'}>
 
-                <Tab.Screen name="Main" component={MainScreen} options={{headerShown:false}}/>
-                <Tab.Screen name="Shop"  options={{headerShown:false}} >
-                    {(props) => <ShoppingCartScreen {...props}  value={12}/>}
-                </Tab.Screen>
+                <Tab.Screen name="Shop"
+                            component={ShopScreen}
+                            options={{
+                                headerShown: false, tabBarIcon: ({focused}) => {
+                                    return <View>
+                                        <SvgHome colorFill={focused ? 'blue' : 'black'}/>
+                                    </View>
+                                }
+                            }}/>
+
+                <Tab.Screen name="Cart"
+                            component={CartScreen}
+                            options={{
+                                headerShown: false,
+                                tabBarIcon: ({focused}) => {
+                                    return <View>
+                                        <SVGShoppingCart colorFill={focused ? 'blue' : 'black'}/>
+                                    </View>
+                                }
+                            }}
+                />
+
 
             </Tab.Navigator>
         </NavigationContainer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, Image, ListRenderItem, Pressable, StatusBar, Text, View} from "react-native";
-import {styles} from "./MainStyles";
+import {styles} from "./ShopStyles";
 import {fakeData, ItemI} from "../../data/FakeData";
 import {PADDING} from "../../constant/constant";
 import {Header} from "../../components/Header/Header";
@@ -8,7 +8,7 @@ import {Footer} from "../../components/Footer/Footer";
 import {Empty} from "../../components/Empty/Empty";
 import {SVGShoppingCart} from "../../svgIcons/SVGShoppingCart";
 
-export const MainScreen = () => {
+export const ShopScreen = () => {
     const renderItem: ListRenderItem<ItemI> = ({item}) => {
         return <View style={[styles.itemProps]}>
             <Image style={[styles.imageStyle]}

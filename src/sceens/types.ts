@@ -1,8 +1,8 @@
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 
 export type MainStackType = {
-    Main: undefined
-    Shop: {
+    Shop: undefined
+    Cart: {
         value2: number
     } | undefined
 }

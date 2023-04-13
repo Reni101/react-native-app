@@ -14,7 +14,7 @@ export const Header = () => {
                 <SVGMenu/>
             </Pressable>
             <Pressable onPress={()=>{
-                navigation.navigate('Shop')
+                navigation.navigate('Cart')
             }}>
                 <SVGShoppingCart colorFill='#fff'/>
             </Pressable>
