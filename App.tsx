@@ -12,7 +12,7 @@ export default function App() {
             <Tab.Navigator>
 
                 <Tab.Screen name="Main" component={MainScreen} options={{headerShown:false}}/>
-                <Tab.Screen name="Shop" options={{headerShown:false}} >
+                <Tab.Screen name="Shop"  options={{headerShown:false}} >
                     {(props) => <ShoppingCartScreen {...props}  value={12}/>}
                 </Tab.Screen>
 
@@ -22,4 +22,6 @@ export default function App() {
 }
 
 
-
+// yarn start --reset-cache
+//  npm start -- --reset-cache
+//  expo start -c
