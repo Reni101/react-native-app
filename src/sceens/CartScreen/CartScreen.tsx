@@ -1,6 +1,5 @@
 import React from 'react';
-import {FlatList, StatusBar, View} from "react-native";
-import {StackShopProps} from "../types";
+import {FlatList, StatusBar, Text, View} from "react-native";
 import {ItemI} from "../../data/FakeData";
 import {PADDING} from "../../constant/constant";
 import {Empty} from "../../components/Empty/Empty";
@@ -30,13 +29,16 @@ export const CartScreen = () => {
                 data={fakeArray}
                 renderItem={renderShoppingItem}
                 bounces={false}
-                contentContainerStyle={{paddingHorizontal: PADDING, flexGrow: 1}}
+                contentContainerStyle={{paddingHorizontal: PADDING}}
                 ListEmptyComponent={Empty}
                 ListHeaderComponent={Header}
                 ListHeaderComponentStyle={styles.header}
                 stickyHeaderIndices={[0]}
-
             />
+            <Text>
+                common:{fakeArray.reduce((sum, el) => sum + el.price, 0)}
+            </Text>
+
         </View>
     );
 };

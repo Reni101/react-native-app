@@ -50,5 +50,10 @@ export const styles = StyleSheet.create({
         fontWeight: '400',
         lineHeight: 12,
         fontSize: 12
+    },
+    scrollTopButton:{
+        position: 'absolute',
+        bottom: 60,
+        right: 30
     }
 });

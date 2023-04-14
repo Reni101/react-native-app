@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, {Path, SvgProps} from "react-native-svg";
 
-export const SvgHome = (props: SvgProps & { colorFill?: string }) => {
+export const HomeIcon = (props: SvgProps & { colorFill?: string }) => {
     return (
         <Svg
             fill="#000000"

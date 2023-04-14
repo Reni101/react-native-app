@@ -1,8 +1,8 @@
 import React from 'react';
 import {Pressable, View} from "react-native";
 import {styles} from "./HeaderStyles";
-import {SVGMenu} from "../../svgIcons/SVGMenu";
-import {SVGShoppingCart} from "../../svgIcons/SVGShoppingCart";
+import {MenuIcon} from "../../svgIcons/menuIcon";
+import {ShoppingCartIcon} from "../../svgIcons/shoppingCartIcon";
 import {useAppNavigation} from "../../hooks/useAppNavigation";
 
 export const Header = () => {
@@ -11,12 +11,12 @@ export const Header = () => {
     return (
         <View style={[styles.content]}>
             <Pressable >
-                <SVGMenu/>
+                <MenuIcon/>
             </Pressable>
             <Pressable onPress={()=>{
                 navigation.navigate('Cart')
             }}>
-                <SVGShoppingCart colorFill='#fff'/>
+                <ShoppingCartIcon colorFill='#fff'/>
             </Pressable>
         </View>
     );
