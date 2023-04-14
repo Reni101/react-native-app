@@ -7,4 +7,4 @@ export type MainStackType = {
     } | undefined
 }
 
-export type StackShopProps = NativeStackScreenProps<MainStackType,'Shop'>
+// export type StackShopProps = NativeStackScreenProps<MainStackType,'Shop'>

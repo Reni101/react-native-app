@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {FlatList, Pressable, StatusBar, View} from "react-native";
+import {FlatList, NativeScrollEvent, NativeSyntheticEvent, Pressable, StatusBar, View} from "react-native";
 import {styles} from "./ShopStyles";
 import {fakeData} from "../../data/FakeData";
 import {PADDING} from "../../constant/constant";
@@ -13,8 +13,13 @@ export const ShopScreen = () => {
     const listRef = useRef<FlatList<any>>(null);
     const [contentVerticalOffset, setContentVerticalOffset] = useState(0);
     const CONTENT_OFFSET_THRESHOLD = 300;
+
     const onPressScrollUpHandler = () => {
         listRef.current?.scrollToOffset({offset: 0, animated: true});
+    }
+    
+    const onScrollFlatList = (event:NativeSyntheticEvent<NativeScrollEvent>) => {
+        setContentVerticalOffset(event.nativeEvent.contentOffset.y);
     }
 
     return (
@@ -23,9 +28,7 @@ export const ShopScreen = () => {
             <FlatList
                 data={fakeData}
                 ref={listRef}
-                onScroll={event => {
-                    setContentVerticalOffset(event.nativeEvent.contentOffset.y);
-                }}
+                onScroll={onScrollFlatList}
                 renderItem={ShopRenderItem}
                 numColumns={2}
                 bounces={false}
