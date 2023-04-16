@@ -4,8 +4,8 @@ import Svg, {Path, SvgProps} from "react-native-svg";
 export const ScrollUpIcon = (props: SvgProps) => {
     return (
         <Svg
-            width="50px"
-            height="50px"
+            width="40px"
+            height="40px"
             viewBox="0 0 16 16"
             fill="none"
 

@@ -17,8 +17,8 @@ export const ShopScreen = () => {
     const onPressScrollUpHandler = () => {
         listRef.current?.scrollToOffset({offset: 0, animated: true});
     }
-    
-    const onScrollFlatList = (event:NativeSyntheticEvent<NativeScrollEvent>) => {
+
+    const onScrollFlatList = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         setContentVerticalOffset(event.nativeEvent.contentOffset.y);
     }
 
